@@ -1,3 +1,14 @@
-credentials/*
+credentials/**
 terraform/.terraform/*
 terraform/.terraform.*
+**/logs/**
+.vscode
+trash_*.py
+bin/
+lib/
+pyvenv.cfg
+app/dbt_vanilla/secrets/*
+.user.yml
+.env
+trash_*
+include/**

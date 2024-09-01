@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: cleaned_games_post_wide
+    description: Cleansed table which contains Airbnb listings.
+    columns:
+      - name: seasonId
+        data_tests:
+          - dbt_expectations.expect_column_values_to_not_be_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string

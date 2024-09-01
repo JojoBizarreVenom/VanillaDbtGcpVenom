@@ -21,3 +21,8 @@ variable "location" {
   default     = "EU"
   description = "description"
 }
+
+variable "github_sha" {
+  type        = string
+  description = "description"
+}

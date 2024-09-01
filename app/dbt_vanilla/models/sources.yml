@@ -1,0 +1,10 @@
+version : 2
+
+sources:
+  - name : bikeshare
+    description : a clone of the Bigquery Database
+    database : datalab-434211
+    schema : test_data
+    tables :
+      - name : games_post_wide
+      - name: schedules

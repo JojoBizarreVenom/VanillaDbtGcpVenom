@@ -46,12 +46,12 @@ jobs:
             # Initialisation of terraform
             - name: Terraform plan for artifatory
               run: |
-                  cd terraform && terraform plan -target=${{ env.TARGET_RESSOURCE_TERRAFORM_ARTIFACT_REGISTRY}} -var "github_sha=${GITHUB_SHA::7}"
+                  cd terraform && terraform plan -target=${{ env.TARGET_RESSOURCE_TERRAFORM_ARTIFACT_REGISTRY}} -var "github_sha=${GITHUB_SHA::7}" -lock=false
 
             # Initialisation of terraform
             - name: Terraform apply for for artifatory
               run: |
-                  cd terraform && terraform apply --auto-approve -target=${{ env.TARGET_RESSOURCE_TERRAFORM_ARTIFACT_REGISTRY}} -var "github_sha=${GITHUB_SHA::7}"
+                  cd terraform && terraform apply --auto-approve -target=${{ env.TARGET_RESSOURCE_TERRAFORM_ARTIFACT_REGISTRY}} -var "github_sha=${GITHUB_SHA::7}" -lock=false
 
             # Build the artifact
             - name: Docker Build
@@ -71,9 +71,9 @@ jobs:
             # Planification of terraform
             - name: Terraform plan
               run: |
-                  cd terraform && terraform plan -var "github_sha=${GITHUB_SHA::7}"
+                  cd terraform && terraform plan -var "github_sha=${GITHUB_SHA::7}" -lock=false
 
             # Deployment of terraform
             - name: Terraform apply
               run: |
-                  cd terraform && terraform apply --auto-approve -var "github_sha=${GITHUB_SHA::7}"
+                  cd terraform && terraform apply --auto-approve -var "github_sha=${GITHUB_SHA::7}" -lock=false
